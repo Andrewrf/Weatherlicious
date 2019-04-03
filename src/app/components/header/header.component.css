@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    align-content: space-between;
+    flex-wrap: no-wrap;
+}
+
+.title {
+    width: 90%;
+}
+
+.settings {
+    margin: 5px;
+}
+
+.home {
+    margin: 5px;
+}
