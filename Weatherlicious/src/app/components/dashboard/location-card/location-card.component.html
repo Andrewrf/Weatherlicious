@@ -1,0 +1,25 @@
+<mat-card style="margin: 10px; width: 200px; display:flex; flex-direction: column; align-items: center" class="example-card">
+  <mat-card-title>{{location.city}}</mat-card-title>
+  <mat-card-subtitle>{{location.locale}}</mat-card-subtitle>
+  <div *ngIf="location.toggleCurrentCondition" class="current-condition" style="border-bottom: 1px solid black;">
+    <mat-card-content>
+      <p style="font-size: 3em; padding-left: 10px;">{{location.temp}}&#176;</p>
+    </mat-card-content>
+  </div>
+  <div *ngIf="location.toggleForecast" class="forecast" style="padding-top: 10px;">
+    <mat-card-content style="max-width: 300px;  display:flex; flex-direction: column; align-items: center" class="example-card">
+      <p style="font-size: 1em;">Forecast</p>
+      <p style="word-wrap: break-word; font-size: 12px">{{location.forecastDesc}}</p>
+      <div class="row">
+        <div class="col">
+          <p>MIN</p>
+          <p>{{location.minTemp}}&#176;</p>
+        </div>
+        <div class="col">
+          <p>MAX</p>
+          <p>{{location.maxTemp}}&#176;</p>
+        </div>
+      </div>
+    </mat-card-content>
+  </div>
+</mat-card>
