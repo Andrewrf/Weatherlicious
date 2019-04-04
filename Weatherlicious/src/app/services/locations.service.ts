@@ -21,11 +21,8 @@ updateCurrentCondition(index: number) {
   this.locations[index].toggleCurrentCondition = !this.locations[index].toggleCurrentCondition;
 }
 
-deleteLocation(item: number) {
-  const index: number = this.locations.indexOf(item);
-  if (index !== -1) {
+deleteLocation(index: number) {
     this.locations.splice(index, 1);
-  }
 }
 
 addLocation(newLocation: Location) {

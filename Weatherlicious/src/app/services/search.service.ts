@@ -8,8 +8,8 @@ import 'rxjs/add/operator/switchMap';
 
 @Injectable()
 export class SearchService {
-  baseUrl: string = 'https://api.cdnjs.com/libraries';
-  queryUrl: string = '?search=';
+  baseUrl: string = 'http://dataservice.accuweather.com/locations/v1/cities/autocomplete';
+  queryUrl: string = '?apikey=Oh4oTVV5nhDFcWCIok8zVSCdadB0yaCt&q=';
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +21,6 @@ export class SearchService {
 
   searchEntries(term) {
     return this.http
-      .get(this.baseUrl + this.queryUrl + term)
-      .map(res => res.json());
+      .get(this.baseUrl + this.queryUrl + term, {});
   }
 }

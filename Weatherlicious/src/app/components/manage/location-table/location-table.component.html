@@ -1,3 +1,10 @@
-<p>
-  location-table works!
-</p>
+<mat-list>
+  <h3 mat-subheader>Your Locations</h3>
+  <mat-list-item *ngFor="let location of locations">
+    <mat-icon mat-list-icon>cloud_queue</mat-icon>
+    <h4 mat-line>{{location.city}}</h4>
+    <p mat-line> {{location.locale}}</p>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>

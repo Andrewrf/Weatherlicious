@@ -1,3 +1,18 @@
-<p>
-  search works!
-</p>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Add New Location
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <input (keyup)="searchEntry.next($event.target.value)" matInput placeholder="City">
+    </mat-form-field>
+    <ul *ngIf="results">
+      <li *ngFor="let result of results | slice:0:9">
+          {{ result.LocalizedName }}, {{result.AdministrativeArea.LocalizedName}}
+      </li>
+    </ul>
+  </mat-expansion-panel>
+</mat-accordion>
