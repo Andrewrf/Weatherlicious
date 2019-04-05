@@ -1,0 +1,11 @@
+.dashboard-container {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-image: url('http://www.hdwallpaperspulse.com/wp-content/uploads/2014/05/01/a0026461_508d3d23cd366.jpg');
+}
+
+.location-card {
+  margin:10px;
+}

@@ -11,7 +11,7 @@
     </mat-form-field>
     <mat-list *ngIf="results">
       <mat-list-item *ngFor="let result of results | slice:0:9;">
-        <h4 (click)="addLocation(result);" mat-line>{{result.LocalizedName}},{{result.AdministrativeArea.LocalizedName}}</h4>
+        <h4 (click)="addLocation(result);" mat-line>{{result.LocalizedName}}, {{result.AdministrativeArea.LocalizedName}}</h4>
       </mat-list-item>
       <mat-divider></mat-divider>
     </mat-list>

@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { LocationService } from '../../../services/locations.service';
-import { WeatherService } from '../../../services/weather.service';
 import { Location } from '../../../models/locations.model';
 import { MatTable } from '@angular/material';
 
@@ -33,7 +32,7 @@ export class LocationTableComponent implements OnInit {
     this.table.renderRows();
   }
 
-  constructor(public locationService: LocationService, public weatherService: WeatherService) {
+  constructor(public locationService: LocationService) {
     this.locations = locationService.getLocations();
   }
 

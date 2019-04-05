@@ -1,16 +1,16 @@
-<mat-card style="margin: 10px; width: 200px; display:flex; flex-direction: column; align-items: center" class="example-card">
+<mat-card class="card-container">
   <mat-card-title>{{location.city}}</mat-card-title>
   <mat-card-subtitle>{{location.locale}}</mat-card-subtitle>
-  <div *ngIf="location.toggleCurrentCondition" class="current-condition" style="border-bottom: 1px solid black;">
+  <div *ngIf="location.toggleCurrentCondition" class="current-condition">
     <mat-card-content>
-      <p style="font-size: 3em; padding-left: 10px;">{{location.temp}}&#176;</p>
-      <p style="word-wrap: break-word; font-size: 12px; text-align: center;">{{location.weatherText}}</p>
+      <p class="current-temp">{{location.temp}}&#176;</p>
+      <p class="current-desc">{{location.weatherText}}</p>
     </mat-card-content>
   </div>
-  <div *ngIf="location.toggleForecast" class="forecast" style="padding-top: 10px;">
-    <mat-card-content style="max-width: 300px;  display:flex; flex-direction: column; align-items: center" class="example-card">
-      <p style="font-size: 1em;">Forecast</p>
-      <p style="text-align:center;word-wrap: break-word; font-size: 12px">{{location.forecastDesc}}</p>
+  <div *ngIf="location.toggleForecast" class="forecast">
+    <mat-card-content class="forecast-container">
+      <p class="forecast-title">Today's Forecast</p>
+      <p class="forecast-desc">{{location.forecastDesc}}</p>
       <div class="row">
         <div class="col">
           <p>MIN</p>
