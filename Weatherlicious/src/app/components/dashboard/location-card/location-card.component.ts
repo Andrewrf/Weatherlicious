@@ -11,7 +11,6 @@ export class LocationCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.location);
   }
 
 }

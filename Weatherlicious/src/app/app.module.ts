@@ -5,7 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { MatSlideToggleModule, MatCardModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatExpansionModule, MatInputModule } from '@angular/material';
+import { MatSlideToggleModule, MatCardModule, MatToolbarModule, MatButtonModule, MatSidenavModule,
+  MatIconModule, MatListModule, MatExpansionModule, MatInputModule, MatTableModule } from '@angular/material';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { SearchComponent } from './components/manage/search/search.component';
@@ -47,7 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [
     LocationService,

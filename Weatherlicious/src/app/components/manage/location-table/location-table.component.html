@@ -1,10 +1,70 @@
-<mat-list>
-  <h3 mat-subheader>Your Locations</h3>
-  <mat-list-item *ngFor="let location of locations">
-    <mat-icon mat-list-icon>cloud_queue</mat-icon>
-    <h4 mat-line>{{location.city}}</h4>
-    <p mat-line> {{location.locale}}</p>
-    <mat-divider></mat-divider>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-</mat-list>
+<!--<mat-list>-->
+  <!--<h3 mat-subheader>Your Locations</h3>-->
+  <!--<mat-list-item *ngFor="let location of locations; let i = index;">-->
+      <!--<mat-icon mat-list-icon>cloud_queue</mat-icon>-->
+      <!--<h4 mat-line>{{location.city}}</h4>-->
+      <!--<p mat-line> {{location.locale}}</p>-->
+      <!--<mat-slide-toggle-->
+        <!--class="example-margin"-->
+        <!--[color]="color"-->
+        <!--(change)="toggleCurrentCondition(i)"-->
+        <!--[checked]="location.toggleCurrentCondition">-->
+        <!--Toggle Current Conditions-->
+      <!--</mat-slide-toggle>-->
+      <!--<mat-slide-toggle-->
+        <!--class="example-margin"-->
+        <!--[color]="color"-->
+        <!--(change)="toggleForecast(i)"-->
+        <!--[checked]="location.toggleForecast">-->
+        <!--Toggle Forecast-->
+      <!--</mat-slide-toggle>-->
+      <!--<mat-icon (click)="deleteLocation(i)" style="color: red;">delete</mat-icon>-->
+      <!--<mat-divider></mat-divider>-->
+  <!--</mat-list-item>-->
+  <!--<mat-divider></mat-divider>-->
+<!--</mat-list>-->
+
+<table mat-table [dataSource]="locations" class="mat-elevation-z8">
+  <!-- City Column -->
+  <ng-container matColumnDef="City">
+    <th mat-header-cell *matHeaderCellDef> City </th>
+    <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+  </ng-container>
+
+  <!-- Current Condition Column -->
+  <ng-container matColumnDef="Toggle Current Condition">
+    <th mat-header-cell *matHeaderCellDef> Toggle Current Conditions </th>
+    <td mat-cell *matCellDef="let element; let i = index;">
+      <mat-slide-toggle
+        class="example-margin"
+        [color]="color"
+        (change)="toggleCurrentCondition(i)"
+        [checked]="element.toggleCurrentCondition">
+      </mat-slide-toggle>
+    </td>
+  </ng-container>
+
+  <!-- Forecast Column -->
+  <ng-container matColumnDef="Toggle Forecast">
+    <th mat-header-cell *matHeaderCellDef> Toggle Forecast </th>
+    <td mat-cell *matCellDef="let element; let i = index;">
+      <mat-slide-toggle
+        class="example-margin"
+        [color]="color"
+        (change)="toggleForecast(i)"
+        [checked]="element.toggleForecast">
+      </mat-slide-toggle>
+    </td>
+  </ng-container>
+
+  <!-- Delete Column -->
+  <ng-container matColumnDef="Delete">
+    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let element; let i = index;">
+      <mat-icon (click)="deleteLocation(i)" style="color: red;">delete</mat-icon>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
