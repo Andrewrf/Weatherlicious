@@ -13,7 +13,7 @@ export class WeatherService {
   searchQueryUrl: string = '&q=';
   currentConditionsUrl: string = 'http://dataservice.accuweather.com/currentconditions/v1/';
   forecastUrl: string = 'http://dataservice.accuweather.com/forecasts/v1/daily/1day/';
-  apiKeyQuery: string = '?apikey=lhC73qLClSqTPZ9lTEbGJTcyEzkhgLGG';
+  apiKeyQuery: string = '?apikey=CqD85wVFoVG08lcMLciGPXMmRA7eKeyP';
 
   constructor(private http: HttpClient) { }
 

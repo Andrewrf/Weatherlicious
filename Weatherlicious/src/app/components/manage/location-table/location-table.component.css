@@ -8,3 +8,8 @@ table {
 .text-center {
   text-align: center;
 }
+
+.delete-icon {
+  color: red;
+  cursor: pointer;
+}
