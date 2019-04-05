@@ -4,12 +4,13 @@
   <div *ngIf="location.toggleCurrentCondition" class="current-condition" style="border-bottom: 1px solid black;">
     <mat-card-content>
       <p style="font-size: 3em; padding-left: 10px;">{{location.temp}}&#176;</p>
+      <p style="word-wrap: break-word; font-size: 12px; text-align: center;">{{location.weatherText}}</p>
     </mat-card-content>
   </div>
   <div *ngIf="location.toggleForecast" class="forecast" style="padding-top: 10px;">
     <mat-card-content style="max-width: 300px;  display:flex; flex-direction: column; align-items: center" class="example-card">
       <p style="font-size: 1em;">Forecast</p>
-      <p style="word-wrap: break-word; font-size: 12px">{{location.forecastDesc}}</p>
+      <p style="text-align:center;word-wrap: break-word; font-size: 12px">{{location.forecastDesc}}</p>
       <div class="row">
         <div class="col">
           <p>MIN</p>

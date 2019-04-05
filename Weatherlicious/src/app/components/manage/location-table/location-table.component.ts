@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { LocationService } from '../../../services/locations.service';
+import { WeatherService } from '../../../services/weather.service';
 import { Location } from '../../../models/locations.model';
 import { MatTable } from '@angular/material';
 
@@ -15,24 +16,24 @@ export class LocationTableComponent implements OnInit {
 
   toggleForecast(index) {
     this.locationService.updateForecast(index);
-    this.table.renderRows();
+    this.renderRows();
   }
 
   toggleCurrentCondition(index) {
     this.locationService.updateCurrentCondition(index);
-    this.table.renderRows();
+    this.renderRows();
   }
 
   deleteLocation(index) {
     this.locationService.deleteLocation(index);
+    this.renderRows();
+  }
+
+  renderRows() {
     this.table.renderRows();
   }
 
-  addLocation() {
-
-  }
-
-  constructor(public locationService: LocationService) {
+  constructor(public locationService: LocationService, public weatherService: WeatherService) {
     this.locations = locationService.getLocations();
   }
 

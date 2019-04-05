@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-manage',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage.component.css']
 })
 export class ManageComponent implements OnInit {
-
+  @ViewChild('locationTable') locationTable;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  renderTable() {
+    this.locationTable.renderRows();
   }
 
 }

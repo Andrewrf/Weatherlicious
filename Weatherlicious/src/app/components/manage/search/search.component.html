@@ -1,5 +1,5 @@
 <mat-accordion>
-  <mat-expansion-panel>
+  <mat-expansion-panel [expanded]="expansion === true">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Add New Location
@@ -9,10 +9,11 @@
     <mat-form-field>
       <input (keyup)="searchEntry.next($event.target.value)" matInput placeholder="City">
     </mat-form-field>
-    <ul *ngIf="results">
-      <li *ngFor="let result of results | slice:0:9">
-          {{ result.LocalizedName }}, {{result.AdministrativeArea.LocalizedName}}
-      </li>
-    </ul>
+    <mat-list *ngIf="results">
+      <mat-list-item *ngFor="let result of results | slice:0:9;">
+        <h4 (click)="addLocation(result);" mat-line>{{result.LocalizedName}},{{result.AdministrativeArea.LocalizedName}}</h4>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
   </mat-expansion-panel>
 </mat-accordion>

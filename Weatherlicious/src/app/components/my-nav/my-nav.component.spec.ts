@@ -11,7 +11,7 @@ import {
 
 import { MyNavComponent } from './my-nav.component';
 
-describe('MyNavComponent', () => {
+xdescribe('MyNavComponent', () => {
   let component: MyNavComponent;
   let fixture: ComponentFixture<MyNavComponent>;
 
